@@ -1,8 +1,8 @@
 apply plugin: 'application'
 
-if (project.statusIsRelease) {
-    apply from: rootProject.file('gradle/sdkman.gradle')
-}
+// if (project.statusIsRelease) {
+//    apply from: rootProject.file('gradle/sdkman.gradle')
+// }
 
 dependencies {
   compile(project(':asciidoctorj')) {

@@ -28,8 +28,20 @@ def gemFiles = fileTree(jruby.gemInstallDir) {
   include "gems/asciidoctor-*/data/**"
 }
 
-jrubyPrepare {
+jrubyPrepare {  
   doLast {
+    copy {
+      from '/home/smallette/git/mm-adt/coderay/bin'
+      into 'build/gems/gems/coderay-1.1.0/bin'      
+    }
+    copy {
+      from '/home/smallette/git/mm-adt/coderay/lib'
+      into 'build/gems/gems/coderay-1.1.0/lib'      
+    }
+    copy {
+      from '/home/smallette/git/mm-adt/coderay/test'
+      into 'build/gems/gems/coderay-1.1.0/test'      
+    }
     copy { // bundles the gems inside this artifact
       from gemFiles
       into preparedGems
